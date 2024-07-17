@@ -13,7 +13,7 @@ import { ToastContainer } from 'react-toastify';
 export const config = getDefaultConfig({
   appName: 'My FrontSmart App',
   projectId: import.meta.env.VITE_PROJECT_ID,
-  chains: [arbitrumSepolia, arbitrum] 
+  chains: [arbitrumSepolia, arbitrum],
 });
 
 const queryClient = new QueryClient();

@@ -5,7 +5,7 @@ import { FSC_CONTRACT_ADDRESS } from "./assets/constants/index";
 import { useState } from 'react';
 import { waitForTransactionReceipt } from 'viem/actions';
 import { config } from "./main";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 function App() { 
   const { address, isConnected } = useAccount();
