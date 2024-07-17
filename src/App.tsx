@@ -49,8 +49,8 @@ function App() {
 
   return (
     <main className="w-full flex justify-center items-center min-h-svh flex-col">
-      <h1 className="text-5xl font-bold text-green-700 ">FSC TOKEN</h1>
-      <h1 className="text-5xl font-bold text-green-700">Faucet</h1>    
+      <h1 className="text-5xl font-bold text-green-600 ">FSC TOKEN</h1>
+      <h1 className="text-5xl font-bold text-green-600">Faucet</h1>    
       <div className="my-5 p-4 flex flex-col items-center gap-5 rounded border border-gray-400">
         <ConnectButton />        
         {isConnected ? (
@@ -78,7 +78,7 @@ function App() {
       <footer>
           <h2>&#169;2024 - Todos los derechos reservdos - REGM</h2>
         </footer>
-        
+
     </main>
 
     
