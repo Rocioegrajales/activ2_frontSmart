@@ -5,7 +5,7 @@ import { FSC_CONTRACT_ADDRESS } from "./assets/constants/index";
 import { useState } from 'react';
 import { waitForTransactionReceipt } from 'viem/actions';
 import { config } from "./main";
-import { toast, ToastContainer } from "react-toastify";
+import { toast} from "react-toastify";
 
 function App() { 
   const { address, isConnected } = useAccount();
@@ -28,7 +28,7 @@ function App() {
       abi,
       address: FSC_CONTRACT_ADDRESS,
       functionName: "mint",
-      args: [address, 200],
+      args: [address, 100],
     })
 
     await waitForTransactionReceipt(config, {
@@ -37,21 +37,22 @@ function App() {
     })
 
     setIsMinting(false);
-    toast.success("Minted 200 FSC tokens");
+    toast.success("Minted 100 FSC tokens");
     refetch();
-
-  }catch (error) {
+  } catch (error) {
     console.error(error);
-    toast.error("failed to mint FSC tokens");
+    toast.error("Failed transaction");
     setIsMinting(false);
   }
 };
+
+// console.log(address);
 
   return (
     <main className="w-full flex justify-center items-center min-h-svh flex-col">
       <h1 className="text-5xl font-bold text-green-600 ">FSC TOKEN</h1>
       <h1 className="text-5xl font-bold text-green-600">Faucet</h1>    
-      <div className="my-5 p-4 flex flex-col items-center gap-5 rounded border border-gray-400">
+      <div className="my-5 p-4 flex flex-col items-center gap-5">
         <ConnectButton />        
         {isConnected ? (
           <div className="space-y-5">
@@ -76,12 +77,10 @@ function App() {
       </div>
 
       <footer>
-          <h2>&#169;2024 - Todos los derechos reservdos - REGM</h2>
-        </footer>
+        <h2>&#169;2024 - Todos los derechos reservados - REGM</h2>
+      </footer>
 
-    </main>
-
-    
+    </main>    
   );
 }
 

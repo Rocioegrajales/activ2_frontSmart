@@ -22,8 +22,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider>
+        <RainbowKitProvider>          
           <App />
+          <ToastContainer />
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>   
